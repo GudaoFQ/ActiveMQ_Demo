@@ -26,7 +26,7 @@ public class Producer {
         connection.start();
         // 创建会话
         Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
-        // 创建队列目标,并标识队列名称，消费者根据队列名称接收数据
+        // 创建队列目标,并标识队列名称，消费者根据队列名称接收数据：不同于点对点
         Destination destination = session.createTopic("topicTest");
         // 创建一个生产者
         MessageProducer producer = session.createProducer(destination);
