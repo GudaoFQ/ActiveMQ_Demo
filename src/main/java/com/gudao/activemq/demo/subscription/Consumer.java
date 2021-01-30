@@ -1,4 +1,4 @@
-package com.gudao.activemq.demo.pointTpoint;
+package com.gudao.activemq.demo.subscription;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
 import javax.jms.Connection;
@@ -29,7 +29,7 @@ public class Consumer {
         // 创建会话
         Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
         // 创建队列目标,并标识队列名称，消费者根据队列名称接收数据
-        Destination destination = session.createQueue("myQueue");
+        Destination destination = session.createTopic("topicTest");
         // 创建消费者
         MessageConsumer consumer = session.createConsumer(destination);
         // 创建消费的监听
